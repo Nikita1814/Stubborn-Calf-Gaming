@@ -169,16 +169,55 @@ window.addEventListener('keydown', (event) => {
     console.log(event.key)
     switch (event.key) {
         case "ArrowUp":
+            event.preventDefault()
             move('up', state.currentPos)
             break;
         case "ArrowDown":
+            event.preventDefault()
             move('down', state.currentPos)
             break;
         case "ArrowLeft":
+            event.preventDefault()
             move('left', state.currentPos)
             break;
         case "ArrowRight":
+            event.preventDefault()
             move('right', state.currentPos)
             break;
     }
+})
+
+// menu navigation
+
+const menuSection = document.querySelector(".menu-section")
+const menuButtons = document.querySelector(".buttons")
+
+
+menuButtons.addEventListener('click', (e) => {
+    console.log(e.target.classList)
+     if(e.target.classList.contains("menu-section-button") && e.target.id) {
+        const menuSlides = [...document.querySelectorAll(".menu-slide")]
+        const menuButtonGroups = [...document.querySelectorAll(".menu-buttons-group")]
+        console.log("Zounds! A button was clicked!")
+        const menuToActivate = e.target.id.split('-')[1]
+
+        menuSlides.forEach(menuSlide => {
+            const menuType = menuSlide.id.split('-')[1]
+            if (menuType === menuToActivate) {
+                menuSlide.classList.remove("menu-hidden")
+            } else {
+                menuSlide.classList.add("menu-hidden")
+            }
+        })
+
+
+        menuButtonGroups.forEach(btnGrp => {
+            const grpId = btnGrp.id.split('-')[1]
+            if (grpId === menuToActivate) {
+                btnGrp.classList.remove("menu-hidden")
+            } else {
+                btnGrp.classList.add("menu-hidden")
+            }
+        })
+     }
 })

@@ -1,3 +1,77 @@
+@font-face {
+    font-family: 'Pixelify';
+    src: url('assets/fonts/PixelifySans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 canvas {
     border: 1px solid black;
 }
+
+.title {
+    font-family: 'Pixelify';
+}
+
+/*menu screen on the right*/
+
+.menu-screen {
+    width: 640px;
+    height: 645px;
+    background-color: black;
+}
+
+.buttons {
+    height: 129px;
+    border-top: solid, 10px;
+    border-color: white;
+}
+
+.menu-section {
+    height: 516px;
+    color: white;
+    font-family: 'Pixelify';
+}
+
+.menu-buttons-group {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.menu-section-button {
+    background-color: black;
+    border: solid white;
+    color: white;
+    font-family: 'Pixelify';
+    height: 40px;
+}
+
+.menu-slide {
+    height: 100%
+}
+
+.menu-hidden {
+    display: none !important;
+}
+
+.chars-menu-chars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.chars-menu-char {
+    padding: 40px auto
+}
+
+.screens {
+    display: flex;
+    justify-content: center;
+}
+
+.log-screen {
+    height: 360px;
+    background-color: black
+}
+
