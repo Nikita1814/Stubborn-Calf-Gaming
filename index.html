@@ -10,6 +10,93 @@
 
     <h2 class="title">Canvas Tiles</h2>
     <div class="screens">
+
+        <div class="combat-screen menu-hidden">
+            <!--views/windows-->
+            <div class="pov-view">
+                <div class="monsters-row combat-row"> 
+                    <div class="character-big orc-shaman"></div>
+                </div>
+               <div class="characters-row combat-row">
+                <div class="character-big human-fighter"></div>
+               </div>
+            </div>
+            <div class="combat-spellbook combat-popup"></div>
+            <div class="combat-enemy-formation-menu combat-popup menu-hidden">
+                <ul class="chars-menu-chars">
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="m-c" class="combat-player-chars-menu combat-popup menu-hidden">
+                <div class="chars-manu menu-slide">
+                    <ul class="chars-menu-chars">
+                        <li class="chars-menu-char">
+                            <p>Guy Mc'Dude - Human - Fighter <span class="char-menu-hp">10/10</span> <span class="char-menu-lvlup">LvlUp</span></p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Patrick The Pure - Human - Paladin 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Sister Celestine - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Behlit the Swift - Half elf - Rogue 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Ibuprofen the Reliever - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Glorianna - Elf - Wizard</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="combat-menu">
+                <div class="combat-main-menu">
+                    <button class="menu-section-button attack-button">
+                        Attack
+                    </button>
+                    <button class="menu-section-button">
+                        Cast Spell
+                    </button>
+                    <button class="menu-section-button">
+                        Pass
+                    </button>
+                    <button class="menu-section-button">
+                        Flee
+                    </button>
+                    <button class="menu-section-button">
+                        Inventory
+                    </button>
+                    <button class="menu-section-button">
+                        View Party
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+
+
         <canvas id="gameCanvas" width="640" height="640"></canvas>
         <section class="menu-screen">
             <div class="menu-section">
@@ -80,7 +167,12 @@
             </div>
         </section>
     </div>
+
+    
     <div class="log-screen"></div>
+    <button class="toggle-combat">
+        Dev Toggle Combat
+    </button>
     <script src="script.js"></script>
 </body>
 </html>

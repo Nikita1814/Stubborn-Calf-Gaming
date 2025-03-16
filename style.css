@@ -23,7 +23,7 @@ canvas {
 
 .buttons {
     height: 129px;
-    border-top: solid, 10px;
+    border-top: solid 5px;
     border-color: white;
 }
 
@@ -36,7 +36,7 @@ canvas {
 .menu-buttons-group {
     display: flex;
     justify-content: space-between;
-    padding:10px;
+    padding: 10px;
 }
 
 .menu-section-button {
@@ -68,10 +68,69 @@ canvas {
 .screens {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .log-screen {
-    height: 360px;
+    height: 160px;
     background-color: black
 }
 
+
+
+/*Combat view*/
+
+.combat-screen {
+    width: 1280px;
+    height: 645px;
+    z-index: 1;
+    background-color: black;
+    position:absolute
+
+}
+
+.pov-view {
+    height: 425px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.character-big {
+    width: 160px;
+    height:160px
+}
+
+.orc-shaman {
+    background-image: url('./assets/large_sprites/orc-mage.png') ;
+    background-size: contain;
+}
+
+.combat-menu {
+    height: 220px;
+    border-top: solid 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.combat-menu .buttons {
+    height: 80px;
+    width: 90px
+}
+
+.combat-main-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.human-fighter {
+    background-image: url('./assets/large_sprites/medium-fighter/4-0.PNG');
+    background-size: cover;
+
+}
+
+.combat-row{
+    display: flex;
+    justify-content: center;
+}

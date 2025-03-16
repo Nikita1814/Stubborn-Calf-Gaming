@@ -198,7 +198,6 @@ menuButtons.addEventListener('click', (e) => {
      if(e.target.classList.contains("menu-section-button") && e.target.id) {
         const menuSlides = [...document.querySelectorAll(".menu-slide")]
         const menuButtonGroups = [...document.querySelectorAll(".menu-buttons-group")]
-        console.log("Zounds! A button was clicked!")
         const menuToActivate = e.target.id.split('-')[1]
 
         menuSlides.forEach(menuSlide => {
@@ -220,4 +219,48 @@ menuButtons.addEventListener('click', (e) => {
             }
         })
      }
+})
+
+
+const combatModeToggle = document.querySelector(".toggle-combat")
+combatModeToggle.addEventListener('click', () => {
+    const combatWindow = document.querySelector('.combat-screen')
+    if (combatWindow.classList.contains("menu-hidden")) {
+        combatWindow.classList.remove("menu-hidden")
+    } else {
+        combatWindow.classList.add("menu-hidden")
+    }
+})
+
+function animateHit() {
+    console.log('animating')
+    const element = document.querySelector(".human-fighter");
+    let start;
+
+function step(timestamp) {
+  if (start === undefined) {
+    start = timestamp;
+  }
+  const elapsed = timestamp - start;
+
+  // Math.min() is used here to make sure the element stops at exactly 200px
+  const shift = Math.min(elapsed, 500);
+  element.style.backgroundImage = `url(./assets/large_sprites/medium-fighter/9-${Math.round(shift/100)}.PNG)`;
+  element.style.backgroundSize = "cover"
+  console.log(shift)
+  if (shift < 500) {
+    requestAnimationFrame(step);
+  } else {
+    element.style = ""
+  }
+}
+
+requestAnimationFrame(step);
+}
+
+const attackButton = document.querySelector(".attack-button")
+
+attackButton.addEventListener('click', () =>{
+    console.log("Attack!")
+    animateHit()
 })

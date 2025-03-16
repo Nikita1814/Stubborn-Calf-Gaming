@@ -13,6 +13,21 @@ export class Cell {
 
 
 
+export class Vocation {
+    stats = {
+        Strength: 10,
+        Dexterity: 10,
+        Constitution: 10,
+        Inteligence: 10,
+        Wisdom: 10,
+        Charisma: 10
+    }
+
+    armorTyes = ['light', 'medium', 'heavy']
+}
+
+
+
 
 
 
@@ -30,32 +45,3 @@ export class Cell {
 
 //     cells =  []
 // }
-
-
-
-
-    const vehicleBrand = brandIdsData.find(brand => {
-      return brand.techName === brandId || brand.displayName === brandId;
-    });
-
-    if (!vehicleBrand) {
-      console.log(value)
-      throw new Error(
-        `No brand found for row ${idx}. Please ensure a valid brand name or ID is provided.`
-      );
-    } else {
-      newValue.brandId = vehicleBrand.id;
-      const {id,caravanMaximumNoseWeight, caravanMinimumNoseWeight,  caravanJockeyWheelDistanceToAxle, caravanJockeyWheelDistanceToTowBar, ...rest} = newValue
-      
-      const generatedProductKey = `${(newValue.productNameKey == null || newValue.productNameKey.length === 0) ?  (newValue.modelGroup + "_" + newValue.model+ "_" +newValue.layout + "_" +newValue.modelYear).trim() :  newValue.productNameKey}`
-      
-     if(newValue.typeId === "caravan") {
-     return {...rest, productNameKey: generatedProductKey, caravanSpecificDetails: {
-       maximumNoseWeight: caravanMaximumNoseWeight,
-       minimumNoseWeight: caravanMinimumNoseWeight,
-       jockeyWheelDistanceToAxle: caravanJockeyWheelDistanceToAxle,
-       jockeyWheelDistanceToTowBar:caravanJockeyWheelDistanceToTowBar
-     } }
-     }
-      return {...rest};
-    }
