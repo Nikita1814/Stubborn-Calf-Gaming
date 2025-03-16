@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Tiles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2 class="title">Canvas Tiles</h2>
+    <div class="screens">
+
+        <div class="combat-screen menu-hidden">
+            <!--views/windows-->
+            <div class="pov-view">
+                <div class="monsters-row combat-row"> 
+                    <div class="character-big orc-shaman"></div>
+                </div>
+               <div class="characters-row combat-row">
+                <div class="character-big human-fighter"></div>
+               </div>
+            </div>
+            <div class="combat-spellbook combat-popup"></div>
+            <div class="combat-enemy-formation-menu combat-popup menu-hidden">
+                <ul class="chars-menu-chars">
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                    <li class="chars-menu-char">
+                        <p>Orc Warrior</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="m-c" class="combat-player-chars-menu combat-popup menu-hidden">
+                <div class="chars-manu menu-slide">
+                    <ul class="chars-menu-chars">
+                        <li class="chars-menu-char">
+                            <p>Guy Mc'Dude - Human - Fighter <span class="char-menu-hp">10/10</span> <span class="char-menu-lvlup">LvlUp</span></p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Patrick The Pure - Human - Paladin 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Sister Celestine - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Behlit the Swift - Half elf - Rogue 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Ibuprofen the Reliever - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Glorianna - Elf - Wizard</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="combat-menu">
+                <div class="combat-main-menu">
+                    <button class="menu-section-button attack-button">
+                        Attack
+                    </button>
+                    <button class="menu-section-button">
+                        Cast Spell
+                    </button>
+                    <button class="menu-section-button">
+                        Pass
+                    </button>
+                    <button class="menu-section-button">
+                        Flee
+                    </button>
+                    <button class="menu-section-button">
+                        Inventory
+                    </button>
+                    <button class="menu-section-button">
+                        View Party
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+
+
+        <canvas id="gameCanvas" width="640" height="640"></canvas>
+        <section class="menu-screen">
+            <div class="menu-section">
+                <div id="m-c" class="chars-manu menu-slide menu-hidden">
+                    <ul class="chars-menu-chars">
+                        <li class="chars-menu-char">
+                            <p>Guy Mc'Dude - Human - Fighter <span class="char-menu-hp">10/10</span> <span class="char-menu-lvlup">LvlUp</span></p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Patrick The Pure - Human - Paladin 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Sister Celestine - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Behlit the Swift - Half elf - Rogue 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Ibuprofen the Reliever - Human - Cleric 10/10</p>
+                        </li>
+                        <li class="chars-menu-char">
+                            <p>Glorianna - Elf - Wizard</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="m-m" class="chars-manu menu-slide">
+                    <h5>Here there shall be the Main menu</h5>
+                </div>
+                <div id="m-sp" class="spells-menu menu-slide menu-hidden">
+                    <h5>Here there shall be the Spells Menu</h5>
+                </div>
+                <div id="m-i" class="inventory-menu menu-slide menu-hidden">
+                    <h5>Here there shall be the Inventory Menu</h5>
+                </div>
+                <div id="m-con" class="conversation-menu menu-slide menu-hidden">
+                    <h5>Here there shall be the Conversation Menu</h5>
+                </div>
+                <div id="m-s"class="shop-menu menu-hidden">
+                    <h5>Here there shall be the Shop Menu</h5>
+                </div>
+            </div>
+            <div class="buttons">
+                <div id="g-m" class="main-buttons menu-buttons-group ">
+                    <button class="main-inventory-button menu-section-button">Interact</button>
+                    <button id="b-i"class="main-chars-button menu-section-button">Inventory</button>
+                    <button id="b-c"class="main-inventory-button menu-section-button">Party</button>
+                    <button class="main-inventory-button menu-section-button">Rest</button>
+                    <button class="main-inventory-button menu-section-button">Change Formation</button>
+                </div>
+                <div id="g-c" class="chars-menu-buttons menu-buttons-group menu-hidden">
+                    <button class="chars-sheet-button menu-section-button">Char Sheet</button>
+                    <button id="b-sp" class="chars-spells-button menu-section-button">Spells</button>
+                    <button class="chars-set-as-leader-button menu-section-button">Set as Leader</button>
+                    <button class="chars-lvl-up-button menu-section-button menu-button-hidden">Lvl Up</button>
+                    <button id="b-m" class="chars-back-button menu-section-button">Back</button>
+                </div>
+                <div id="g-i" class="interact-menu-buttons menu-buttons-group menu-hidden">
+                    <button id="b-m" class="interact-menu-button menu-section-button">Back</button>
+                </div>
+                <div id="g-s" class="spells-menu-buttons menu-buttons-group menu-hidden">
+                    <button id="b-s"class="spells-info-button menu-section-button">Info</button>
+                    <button class="spells-cast-button menu-section-button">Cast</button>
+                    <button class="spells-replace-button menu-section-button">Replace Slot</button>
+                    <button class="spells-next-page-button menu-section-button menu-button-hidden">Next page</button>
+                    <button class="spells-previous-page-button menu-section-button menu-button-hidden">Previous page</button>
+                    <button id="b-m"class="spells-back-button menu-section-button menu-button-hidden">Back</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    <div class="log-screen"></div>
+    <button class="toggle-combat">
+        Dev Toggle Combat
+    </button>
+    <script src="script.js"></script>
+</body>
+</html>
